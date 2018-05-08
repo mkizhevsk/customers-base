@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="mainPanel" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top >
+        <VBox >
+           <children>
+              <MenuBar fx:id="menuArea">
+                     <menus>
+                         <Menu  text="File">
+                            <items>
+                                <MenuItem onAction="#helloWorld" text="test..." />
+                                <SeparatorMenuItem />
+                                <MenuItem onAction="#addCompany" text="New..." />
+                                <SeparatorMenuItem />
+                                <MenuItem onAction="#editCompany" text="Edit..." />
+                                <SeparatorMenuItem />
+                                <MenuItem onAction="#deleteCompany" text="Delete..." />
+                                <SeparatorMenuItem />
+
+                                <MenuItem onAction="#handleExit" text="Exit" />
+                            </items>
+                         </Menu>
+                     </menus>
+                  </MenuBar>
+           </children>
+        </VBox>
+    </top>
+    <left>
+        <VBox fx:id="leftPart" spacing="10">
+           <children>
+               <HBox>
+                  <children>
+                      <TableView fx:id="companiesTable" onKeyPressed="#handleKeyPressed">
+                          <columns>
+                              <TableColumn prefWidth="300" text="name">
+                                  <cellValueFactory>
+                                      <PropertyValueFactory property="name" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="98" text="region">
+                                  <cellValueFactory>
+                                      <PropertyValueFactory property="region" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                          </columns>
+                      </TableView>
+                      <GridPane fx:id="textArea">
+                         <children>
+                             <Label text="region:  " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                             <ComboBox fx:id="regions" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+   
+                             <Label GridPane.columnIndex="0" GridPane.rowIndex="2" />
+   
+                             <Label fx:id="addressWord" alignment="TOP_LEFT" text="address:  " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                             <Label fx:id="addressLabel" alignment="TOP_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+   
+                             <Label fx:id="commentWord" text="comment:  " alignment="TOP_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                             <Label fx:id="commentLabel" alignment="TOP_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                         </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                      </GridPane>
+                  </children>
+               </HBox>
+               <HBox>
+                  <children>
+                     <TableView fx:id="personsTable" onKeyPressed="#handleKeyPressed">
+                         <columns>
+                           <TableColumn prefWidth="120" text="name">
+                               <cellValueFactory>
+                                   <PropertyValueFactory property="name" />
+                               </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn prefWidth="100" text="position">
+                               <cellValueFactory>
+                                   <PropertyValueFactory property="position" />
+                               </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn prefWidth="100" text="phone">
+                               <cellValueFactory>
+                                   <PropertyValueFactory property="phone" />
+                               </cellValueFactory>
+                           </TableColumn>
+                             <TableColumn prefWidth="298" text="comment">
+                                 <cellValueFactory>
+                                     <PropertyValueFactory property="comment" />
+                                 </cellValueFactory>
+                             </TableColumn>
+                         </columns>
+                     </TableView>
+                      <TableView fx:id="contactsTable"  onKeyPressed="#handleKeyPressed">
+                          <columns>
+                              <TableColumn fx:id="contactDate" prefWidth="70" text="date">
+                                  <cellValueFactory>
+                                      <PropertyValueFactory property="date" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="100" text="person">
+                                  <cellValueFactory>
+                                      <PropertyValueFactory property="person" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="448" text="content">
+                                  <cellValueFactory>
+                                      <PropertyValueFactory property="content" />
+                                  </cellValueFactory>
+                              </TableColumn>
+                          </columns>
+                      </TableView>
+                     <TabPane fx:id="tabPane">
+                         <tabs>
+                           <Tab fx:id="tabPersons" text="people">
+   
+                                  <content>
+                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                   </content>
+                           </Tab>
+                           <Tab fx:id="tabContacts" text="contacts">
+   
+                                   <content>
+                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                   </content>
+                           </Tab>
+                         </tabs>
+                     </TabPane>
+                      <VBox fx:id="buttons">
+                         <children>
+                             <Button fx:id="Add" onAction="#addItem" text="Add..." />
+                             <Button fx:id="Edit" onAction="#editItem" text="Edit..." />
+                             <Button fx:id="Delete" onAction="#deleteItem" text="Delete..." />
+                         </children>
+                      </VBox>
+                  </children>
+               </HBox>
+           </children>
+        </VBox>
+    </left>
+</BorderPane>
