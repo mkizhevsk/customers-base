@@ -17,7 +17,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
         primaryStage.setTitle("cb");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 1000, 750));
         primaryStage.show();
 
         //companyList.readCompanies();

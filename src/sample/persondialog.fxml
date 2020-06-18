@@ -7,23 +7,23 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<DialogPane fx:controller="sample.PersonController" xmlns:fx="http://javafx.com/fxml">
-    <headerText>
+<DialogPane fx:controller="sample.controller.PersonController" xmlns:fx="http://javafx.com/fxml">
+    <headerText >
         Information about person
     </headerText>
     <content>
-        <GridPane hgap="10" vgap="10">
-            <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <GridPane style="-fx-pref-width: 400px" hgap="10" vgap="10">
+            <Label style="-fx-font-size: 1.1em" text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField style="-fx-font-size: 1.1em" fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <Label text="Position: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="positionField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label style="-fx-font-size: 1.1em" text="Position: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField style="-fx-font-size: 1.1em" fx:id="positionField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Label text="Phone: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label style="-fx-font-size: 1.1em" text="Phone: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField style="-fx-font-size: 1.1em" fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <Label text="Comment: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <TextField fx:id="commentField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label style="-fx-font-size: 1.1em" text="Comment: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField style="-fx-font-size: 1.1em; -fx-pref-width: 300px" fx:id="commentField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
 
             <columnConstraints>

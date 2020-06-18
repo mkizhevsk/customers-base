@@ -52,12 +52,12 @@
                   <children>
                       <TableView fx:id="companiesTable" onKeyPressed="#handleKeyPressed">
                           <columns>
-                              <TableColumn prefWidth="300" text="name">
+                              <TableColumn prefWidth="400" text="name">
                                   <cellValueFactory>
                                       <PropertyValueFactory property="name" />
                                   </cellValueFactory>
                               </TableColumn>
-                              <TableColumn prefWidth="98" text="region">
+                              <TableColumn prefWidth="187" text="region">
                                   <cellValueFactory>
                                       <PropertyValueFactory property="region" />
                                   </cellValueFactory>
@@ -66,7 +66,7 @@
                       </TableView>
                       <GridPane fx:id="textArea">
                          <children>
-                             <Label text="region:  " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                             <Label fx:id="regionWord" text="region:  " GridPane.columnIndex="0" GridPane.rowIndex="0" />
                              <ComboBox fx:id="regions" GridPane.columnIndex="1" GridPane.rowIndex="0" />
    
                              <Label GridPane.columnIndex="0" GridPane.rowIndex="2" />
@@ -93,32 +93,36 @@
                       </GridPane>
                   </children>
                </HBox>
+
                <HBox>
                   <children>
                      <TableView fx:id="personsTable" onKeyPressed="#handleKeyPressed">
                          <columns>
-                           <TableColumn prefWidth="120" text="name">
+                           <TableColumn prefWidth="250" text="name">
                                <cellValueFactory>
                                    <PropertyValueFactory property="name" />
                                </cellValueFactory>
                            </TableColumn>
-                           <TableColumn prefWidth="100" text="position">
+
+                           <TableColumn prefWidth="150" text="position">
                                <cellValueFactory>
                                    <PropertyValueFactory property="position" />
                                </cellValueFactory>
                            </TableColumn>
-                           <TableColumn prefWidth="100" text="phone">
+
+                           <TableColumn prefWidth="120" text="phone">
                                <cellValueFactory>
                                    <PropertyValueFactory property="phone" />
                                </cellValueFactory>
                            </TableColumn>
-                             <TableColumn prefWidth="298" text="comment">
+                             <TableColumn prefWidth="328" text="comment">
                                  <cellValueFactory>
                                      <PropertyValueFactory property="comment" />
                                  </cellValueFactory>
                              </TableColumn>
                          </columns>
                      </TableView>
+
                       <TableView fx:id="contactsTable"  onKeyPressed="#handleKeyPressed">
                           <columns>
                               <TableColumn fx:id="contactDate" prefWidth="70" text="date">
@@ -126,11 +130,13 @@
                                       <PropertyValueFactory property="date" />
                                   </cellValueFactory>
                               </TableColumn>
+
                               <TableColumn prefWidth="100" text="person">
                                   <cellValueFactory>
                                       <PropertyValueFactory property="person" />
                                   </cellValueFactory>
                               </TableColumn>
+
                               <TableColumn prefWidth="448" text="content">
                                   <cellValueFactory>
                                       <PropertyValueFactory property="content" />
@@ -138,22 +144,23 @@
                               </TableColumn>
                           </columns>
                       </TableView>
-                     <TabPane fx:id="tabPane">
-                         <tabs>
-                           <Tab fx:id="tabPersons" text="people">
-   
+
+                      <TabPane fx:id="tabPane">
+                          <tabs>
+                              <Tab fx:id="tabPersons" text="people">
                                   <content>
-                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                   </content>
-                           </Tab>
-                           <Tab fx:id="tabContacts" text="contacts">
-   
-                                   <content>
-                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                   </content>
-                           </Tab>
-                         </tabs>
-                     </TabPane>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                                  </content>
+                              </Tab>
+
+                              <Tab fx:id="tabContacts" text="contacts">
+                                  <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                                  </content>
+                              </Tab>
+                          </tabs>
+                      </TabPane>
+
                       <VBox fx:id="buttons">
                          <children>
                              <Button fx:id="Add" onAction="#addItem" text="Add..." />

@@ -1,4 +1,4 @@
-package sample;
+package sample.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,6 @@ import sample.datamodel.Company;
 import sample.datamodel.Contact;
 import sample.datamodel.Person;
 
-import java.awt.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Optional;
